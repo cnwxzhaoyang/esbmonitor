@@ -5,7 +5,7 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.6.1">
-<title>应用开发软件接口消息中间件可视化平台后端接口规范</title>
+<title>应用开发软件接口消息中间件可视化平台后端接口文档</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -427,7 +427,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="book toc2 toc-left">
 <div id="header">
-<h1>应用开发软件接口消息中间件可视化平台后端接口规范</h1>
+<h1>应用开发软件接口消息中间件可视化平台后端接口文档</h1>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
@@ -440,86 +440,68 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_tags">1.5. Tags</a></li>
 </ul>
 </li>
-<li><a href="#_chapter_of_manual_content_1">2. Chapter of manual content 1</a>
+<li><a href="#_paths">2. Resources</a>
 <ul class="sectlevel2">
-<li><a href="#_sub_chapter">2.1. Sub chapter</a></li>
+<li><a href="#_cb68507552cb4fcc54cf16d183501cad">2.1. 服务接口</a>
+<ul class="sectlevel3">
+<li><a href="#_getexamplecodeusingpost_7">2.1.1. 查询示例代码</a></li>
+<li><a href="#_getservicelistusingpost_7">2.1.2. 查询系统上架的服务列表</a></li>
+<li><a href="#_validateusingpost_7">2.1.3. 服务校验</a></li>
 </ul>
 </li>
-<li><a href="#_chapter_of_manual_content_2">3. Chapter of manual content 2</a></li>
-<li><a href="#_paths">4. Resources</a>
+<li><a href="#_18753a9fa1cf2216a3eee627360c9c98">2.2. 用户-角色接口</a>
+<ul class="sectlevel3">
+<li><a href="#_loginusingpost_7">2.2.1. 用户登录认证</a></li>
+<li><a href="#_dologoutusingpost_7">2.2.2. 注销</a></li>
+<li><a href="#_getuserinfousingget_7">2.2.3. 查询用户</a></li>
+</ul>
+</li>
+<li><a href="#_32d33db4b047ec05d31e5d1563ff6bf1">2.3. 统计查询接口</a>
+<ul class="sectlevel3">
+<li><a href="#_getapiinfousingpost_7">2.3.1. 统计接口的相关信息</a></li>
+<li><a href="#_getcalledtop10apilistusingpost_7">2.3.2. 统计被调用次数最多的前10个接口的名称及对应的数量</a></li>
+<li><a href="#_getproducerinfousingpost_7">2.3.3. 统计已注册生产者的相关信息</a></li>
+<li><a href="#_getsuccessratiostatsusingpost_7">2.3.4. 统计接口调用成功率</a></li>
+<li><a href="#_gettop5exceptionapiusingpost_7">2.3.5. 统计出错接口top5</a></li>
+<li><a href="#_gettop5timeconsumingapiusingpost_7">2.3.6. 统计耗时接口top5</a></li>
+<li><a href="#_getwarningrationstatsusingpost_7">2.3.7. 统计接口调用告警率</a></li>
+</ul>
+</li>
+<li><a href="#_b30afa79f4284265246d90eb0345699e">2.4. 运行日志接口</a>
+<ul class="sectlevel3">
+<li><a href="#_getloglistusingpost_7">2.4.1. 查询系统的运行日志</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#_definitions">3. Definitions</a>
 <ul class="sectlevel2">
-<li><a href="#_authentic-controller_resource">4.1. Authentic-controller</a>
-<ul class="sectlevel3">
-<li><a href="#_getstepcodeusingpost">4.1.1. getStepCode</a></li>
-<li><a href="#_loginusingpost">4.1.2. login</a></li>
-<li><a href="#_dologoutusingpost">4.1.3. doLogout</a></li>
-</ul>
-</li>
-<li><a href="#_log_api_resource">4.2. Log Api</a>
-<ul class="sectlevel3">
-<li><a href="#_getloglistusingpost">4.2.1. 查询系统的运行日志</a></li>
-</ul>
-</li>
-<li><a href="#_role-controller_resource">4.3. Role-controller</a>
-<ul class="sectlevel3">
-<li><a href="#_getroleinfousingget">4.3.1. getRoleInfo</a></li>
-</ul>
-</li>
-<li><a href="#_service-controller_resource">4.4. Service-controller</a>
-<ul class="sectlevel3">
-<li><a href="#_getexamplecodeusingpost">4.4.1. 查询示例代码</a></li>
-<li><a href="#_getservicelistusingpost">4.4.2. 查询系统上架的服务列表</a></li>
-</ul>
-</li>
-<li><a href="#_statistics-controller_resource">4.5. Statistics-controller</a>
-<ul class="sectlevel3">
-<li><a href="#_getapiinfousingpost">4.5.1. 统计在本系统中的接口</a></li>
-<li><a href="#_getcalledtop10apilistusingpost">4.5.2. 统计累计被调用次数最多的前10个接口的名称及对应的数量</a></li>
-<li><a href="#_getproducerinfousingpost">4.5.3. 统计在本系统中注册的生产者的相关数</a></li>
-<li><a href="#_getsuccessratiostatsusingpost">4.5.4. 接口调用成功率统计</a></li>
-<li><a href="#_gettop5exceptionapiusingpost">4.5.5. 统计出错接口top5</a></li>
-<li><a href="#_gettop5timeconsumingapiusingpost">4.5.6. 统计出错接口top5</a></li>
-<li><a href="#_getwarningrationstatsusingpost">4.5.7. 统计接口调用告警率统计</a></li>
-</ul>
-</li>
-<li><a href="#_user-controller_resource">4.6. User-controller</a>
-<ul class="sectlevel3">
-<li><a href="#_getuserinfousingget">4.6.1. getUserInfo</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#_definitions">5. Definitions</a>
-<ul class="sectlevel2">
-<li><a href="#_actionentity">5.1. ActionEntity</a></li>
-<li><a href="#_443d7a12239336eccb05e27d6290ea17">5.2. AjaxResponseBody«List«出错接口»»</a></li>
-<li><a href="#_4db3c87999de3efb2fb172071793ede1">5.3. AjaxResponseBody«List«接口»»</a></li>
-<li><a href="#_cfbeb36355e8f9d6d52d1a2fb68ef9e4">5.4. AjaxResponseBody«List«耗时接口»»</a></li>
-<li><a href="#_5af2fd62481f7d534398cf44d78042bf">5.5. AjaxResponseBody«Map«string,SysRole»»</a></li>
-<li><a href="#_c1493923f16ffc6a98d4acbbf0f2a682">5.6. AjaxResponseBody«Map«string,object»»</a></li>
-<li><a href="#_73a58e14a88aef8abbf03bf80233b117">5.7. AjaxResponseBody«SysUser»</a></li>
-<li><a href="#_afa2a891eb0fd048fdef50aeaf94bfc1">5.8. AjaxResponseBody«api的统计数据»</a></li>
-<li><a href="#_67378c9e5702e29a7e05cb3d9d7b88a7">5.9. AjaxResponseBody«string»</a></li>
-<li><a href="#_0ae82afdd09bfcaaa14d4edea3f24eba">5.10. AjaxResponseBody«响应的列表数据«服务实体»»</a></li>
-<li><a href="#_c76f211cb722229e2463065627701bcf">5.11. AjaxResponseBody«响应的列表数据«运行日志»»</a></li>
-<li><a href="#_819a1a1981a11cc50697ccd737879e96">5.12. AjaxResponseBody«服务调用告警率统计»</a></li>
-<li><a href="#_bf00d872ed7b7bd7424256fd24ef7227">5.13. AjaxResponseBody«服务调用成功率统计»</a></li>
-<li><a href="#_d7cfd45b15f94816afee2fa8ffb3104d">5.14. AjaxResponseBody«生产者的统计数据»</a></li>
-<li><a href="#_4403db69846f43b54f667a7502e2f133">5.15. Map«string,SysRole»</a></li>
-<li><a href="#_syspermission">5.16. SysPermission</a></li>
-<li><a href="#_sysrole">5.17. SysRole</a></li>
-<li><a href="#_sysuser">5.18. SysUser</a></li>
-<li><a href="#_c597ef4bc4160c66a5c6a594b6b27678">5.19. api的统计数据</a></li>
-<li><a href="#_d9a8e5c91743298623ced63ad4347464">5.20. 出错接口</a></li>
-<li><a href="#_813113262d6f070d397f0fd2db0c8acd">5.21. 响应的列表数据«服务实体»</a></li>
-<li><a href="#_4e5d824a435ef60b6528f3bdf8cc994b">5.22. 响应的列表数据«运行日志»</a></li>
-<li><a href="#_54ea89b497ec3bb319c68844dfa3687f">5.23. 接口</a></li>
-<li><a href="#_63ec592720d97a8bb8259f15cddbb2bb">5.24. 服务实体</a></li>
-<li><a href="#_de6b363af8acdd2edc69104626063ab8">5.25. 服务调用告警率统计</a></li>
-<li><a href="#_b5fde2a73252d6b647a4715e757ad108">5.26. 服务调用成功率统计</a></li>
-<li><a href="#_d2399114a411d0f9d77739865d2c5760">5.27. 生产者的统计数据</a></li>
-<li><a href="#_4d45d5c394b3de379fa283c5ef9559b2">5.28. 耗时接口</a></li>
-<li><a href="#_284a98fa89bf61fbe570673f129cb69b">5.29. 运行日志</a></li>
+<li><a href="#_9859bc517e4d1c6d9d412e4d1c8e6f1d">3.1. 出错接口实体</a></li>
+<li><a href="#_e1f3f3f0dfad3313d97a6200f2247334">3.2. 列表数据实体«日志实体»</a></li>
+<li><a href="#_d94fadd1fb99167ac85c5d5cf889be31">3.3. 列表数据实体«服务实体»</a></li>
+<li><a href="#_54ea89b497ec3bb319c68844dfa3687f">3.4. 接口</a></li>
+<li><a href="#_dcef94380a957cedade31723689bea9e">3.5. 接口统计实体</a></li>
+<li><a href="#_d0367595224ea4daa25ef9a1d2d0de1e">3.6. 日志实体</a></li>
+<li><a href="#_63ec592720d97a8bb8259f15cddbb2bb">3.7. 服务实体</a></li>
+<li><a href="#_de6b363af8acdd2edc69104626063ab8">3.8. 服务调用告警率统计</a></li>
+<li><a href="#_b5fde2a73252d6b647a4715e757ad108">3.9. 服务调用成功率统计</a></li>
+<li><a href="#_d2399114a411d0f9d77739865d2c5760">3.10. 生产者的统计数据</a></li>
+<li><a href="#_e0e14a34025d14efed947f52b6e65068">3.11. 用户实体</a></li>
+<li><a href="#_4d45d5c394b3de379fa283c5ef9559b2">3.12. 耗时接口</a></li>
+<li><a href="#_e9727bfe905a8a298eae59f4424125e0">3.13. 通用的ajax响应实体</a></li>
+<li><a href="#_bb0efbe98ee59fe7f633cc4ff18bfd63">3.14. 通用的ajax响应实体«List«出错接口»»</a></li>
+<li><a href="#_a375456e12b1576305b7fecfcf3c8c21">3.15. 通用的ajax响应实体«List«接口»»</a></li>
+<li><a href="#_e4194051c03c1366cbaa7952a21ff49b">3.16. 通用的ajax响应实体«List«耗时接口»»</a></li>
+<li><a href="#_25845957de6634d9341b7f81124d59a2">3.17. 通用的ajax响应实体«Map«string,object»»</a></li>
+<li><a href="#_f03599365c42d6d2fd81c243a985d47d">3.18. 通用的ajax响应实体«api的统计数据»</a></li>
+<li><a href="#_f52d64d3ee64a6e7fae7540feb14b52d">3.19. 通用的ajax响应实体«boolean»</a></li>
+<li><a href="#_b919872925ac2aa760af91f2b6ef5503">3.20. 通用的ajax响应实体«string»</a></li>
+<li><a href="#_a73e95106fa69d7fd6ee00ffc5273158">3.21. 通用的ajax响应实体«列表数据实体«日志实体»»</a></li>
+<li><a href="#_74cc9cae850450b802bc1e6adbbb148c">3.22. 通用的ajax响应实体«列表数据实体«服务实体»»</a></li>
+<li><a href="#_f57fdc61bf3353ddd51f20897e3d353f">3.23. 通用的ajax响应实体«服务调用告警率统计»</a></li>
+<li><a href="#_2be77b66e2e2986665fc4672afbf9b05">3.24. 通用的ajax响应实体«服务调用成功率统计»</a></li>
+<li><a href="#_872c422ca6e098840dbfe2500b303699">3.25. 通用的ajax响应实体«生产者的统计数据»</a></li>
+<li><a href="#_f20947c1556c91f2254c4b143a18cb2a">3.26. 通用的ajax响应实体«用户实体»</a></li>
 </ul>
 </li>
 </ul>
@@ -530,7 +512,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="_overview"><a class="anchor" href="#_overview"></a><a class="link" href="#_overview">1. Overview</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>本文档遵循swagger2接口规范，有工具生成</p>
+<p>本文档遵循swagger2接口规范，由工具生成</p>
 </div>
 <div class="sect2">
 <h3 id="_version_information"><a class="anchor" href="#_version_information"></a><a class="link" href="#_version_information">1.1. Version information</a></h3>
@@ -565,22 +547,16 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="ulist">
 <ul>
 <li>
-<p>authentic-controller : Authentic Controller</p>
+<p>服务接口 : 用于显示服务列表，代码示例，服务校验</p>
 </li>
 <li>
-<p>log api : 操作用户相关接口</p>
+<p>用户-角色接口 : 登录验证,用户权限查询,角色权限查询,注销，由于本系统只提供可视化功能，该部分的数据固化即可，建议直接参考示例代码组织数据</p>
 </li>
 <li>
-<p>role-controller : Role Controller</p>
+<p>统计查询接口 : 用于系统相关服务、接口的调用情况的查询，前台采取各种图表的形式作可视化展示</p>
 </li>
 <li>
-<p>service-controller : Service Controller</p>
-</li>
-<li>
-<p>statistics-controller : Statistics Controller</p>
-</li>
-<li>
-<p>user-controller : User Controller</p>
+<p>运行日志接口 : 多条件筛选 查询日志的列表</p>
 </li>
 </ul>
 </div>
@@ -588,41 +564,47 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_chapter_of_manual_content_1"><a class="anchor" href="#_chapter_of_manual_content_1"></a><a class="link" href="#_chapter_of_manual_content_1">2. Chapter of manual content 1</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>This is some dummy text</p>
-</div>
-<div class="sect2">
-<h3 id="_sub_chapter"><a class="anchor" href="#_sub_chapter"></a><a class="link" href="#_sub_chapter">2.1. Sub chapter</a></h3>
-<div class="paragraph">
-<p>Dummy text of sub chapter</p>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_chapter_of_manual_content_2"><a class="anchor" href="#_chapter_of_manual_content_2"></a><a class="link" href="#_chapter_of_manual_content_2">3. Chapter of manual content 2</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>This is some dummy text</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_paths"><a class="anchor" href="#_paths"></a><a class="link" href="#_paths">4. Resources</a></h2>
+<h2 id="_paths"><a class="anchor" href="#_paths"></a><a class="link" href="#_paths">2. Resources</a></h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_authentic-controller_resource"><a class="anchor" href="#_authentic-controller_resource"></a><a class="link" href="#_authentic-controller_resource">4.1. Authentic-controller</a></h3>
+<h3 id="_cb68507552cb4fcc54cf16d183501cad"><a class="anchor" href="#_cb68507552cb4fcc54cf16d183501cad"></a><a class="link" href="#_cb68507552cb4fcc54cf16d183501cad">2.1. 服务接口</a></h3>
 <div class="paragraph">
-<p>Authentic Controller</p>
+<p>用于显示服务列表，代码示例，服务校验</p>
 </div>
 <div class="sect3">
-<h4 id="_getstepcodeusingpost"><a class="anchor" href="#_getstepcodeusingpost"></a><a class="link" href="#_getstepcodeusingpost">4.1.1. getStepCode</a></h4>
+<h4 id="_getexamplecodeusingpost_7"><a class="anchor" href="#_getexamplecodeusingpost_7"></a><a class="link" href="#_getexamplecodeusingpost_7">2.1.1. 查询示例代码</a></h4>
 <div class="literalblock">
 <div class="content">
-<pre>POST /auth/2step-code</pre>
+<pre>POST /service/getExampleCode</pre>
 </div>
+</div>
+<div class="sect4">
+<h5 id="_parameters"><a class="anchor" href="#_parameters"></a><a class="link" href="#_parameters">Parameters</a></h5>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 16.6666%;">
+<col style="width: 50%;">
+<col style="width: 22.2223%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-middle">Type</th>
+<th class="tableblock halign-left valign-middle">Name</th>
+<th class="tableblock halign-left valign-middle">Description</th>
+<th class="tableblock halign-left valign-middle">Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>Query</strong></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>type</strong><br>
+<em>required</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">编程语言类型,枚举类型，0:java,1:Spring Boot,2:Spring cloud,3:NodeJS,4:C++,5:Python</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int32)</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect4">
 <h5 id="_responses"><a class="anchor" href="#_responses"></a><a class="link" href="#_responses">Responses</a></h5>
@@ -643,7 +625,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>200</strong></p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">OK</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="#_c1493923f16ffc6a98d4acbbf0f2a682">AjaxResponseBody«Map«string,object»»</a></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="#_b919872925ac2aa760af91f2b6ef5503">通用的ajax响应实体«string»</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>201</strong></p></td>
@@ -683,195 +665,17 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="ulist">
 <ul>
 <li>
-<p><code><strong>/</strong></code></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_loginusingpost"><a class="anchor" href="#_loginusingpost"></a><a class="link" href="#_loginusingpost">4.1.2. login</a></h4>
-<div class="literalblock">
-<div class="content">
-<pre>POST /auth/login</pre>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_parameters"><a class="anchor" href="#_parameters"></a><a class="link" href="#_parameters">Parameters</a></h5>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 11.1111%;">
-<col style="width: 16.6666%;">
-<col style="width: 50%;">
-<col style="width: 22.2223%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">Type</th>
-<th class="tableblock halign-left valign-middle">Name</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>Body</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>jsonString</strong><br>
-<em>required</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">jsonString</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_responses_2"><a class="anchor" href="#_responses_2"></a><a class="link" href="#_responses_2">Responses</a></h5>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 10%;">
-<col style="width: 70%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">HTTP Code</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>200</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">OK</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="#_c1493923f16ffc6a98d4acbbf0f2a682">AjaxResponseBody«Map«string,object»»</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>201</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Created</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>401</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Unauthorized</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>403</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Forbidden</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>404</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Not Found</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_consumes_2"><a class="anchor" href="#_consumes_2"></a><a class="link" href="#_consumes_2">Consumes</a></h5>
-<div class="ulist">
-<ul>
-<li>
 <p><code>application/json</code></p>
 </li>
 </ul>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_produces_2"><a class="anchor" href="#_produces_2"></a><a class="link" href="#_produces_2">Produces</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><code><strong>/</strong></code></p>
-</li>
-</ul>
-</div>
-</div>
 </div>
 <div class="sect3">
-<h4 id="_dologoutusingpost"><a class="anchor" href="#_dologoutusingpost"></a><a class="link" href="#_dologoutusingpost">4.1.3. doLogout</a></h4>
+<h4 id="_getservicelistusingpost_7"><a class="anchor" href="#_getservicelistusingpost_7"></a><a class="link" href="#_getservicelistusingpost_7">2.1.2. 查询系统上架的服务列表</a></h4>
 <div class="literalblock">
 <div class="content">
-<pre>POST /auth/logout</pre>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_responses_3"><a class="anchor" href="#_responses_3"></a><a class="link" href="#_responses_3">Responses</a></h5>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 10%;">
-<col style="width: 70%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">HTTP Code</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>200</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">OK</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="#_c1493923f16ffc6a98d4acbbf0f2a682">AjaxResponseBody«Map«string,object»»</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>201</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Created</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>401</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Unauthorized</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>403</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Forbidden</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>404</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Not Found</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_consumes_3"><a class="anchor" href="#_consumes_3"></a><a class="link" href="#_consumes_3">Consumes</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><code>application/json</code></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_produces_3"><a class="anchor" href="#_produces_3"></a><a class="link" href="#_produces_3">Produces</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><code><strong>/</strong></code></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_log_api_resource"><a class="anchor" href="#_log_api_resource"></a><a class="link" href="#_log_api_resource">4.2. Log Api</a></h3>
-<div class="paragraph">
-<p>操作用户相关接口</p>
-</div>
-<div class="sect3">
-<h4 id="_getloglistusingpost"><a class="anchor" href="#_getloglistusingpost"></a><a class="link" href="#_getloglistusingpost">4.2.1. 查询系统的运行日志</a></h4>
-<div class="literalblock">
-<div class="content">
-<pre>POST /log/getLogList</pre>
+<pre>POST /service/getServiceList</pre>
 </div>
 </div>
 <div class="sect4">
@@ -916,6 +720,218 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </table>
 </div>
 <div class="sect4">
+<h5 id="_responses_2"><a class="anchor" href="#_responses_2"></a><a class="link" href="#_responses_2">Responses</a></h5>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 70%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-middle">HTTP Code</th>
+<th class="tableblock halign-left valign-middle">Description</th>
+<th class="tableblock halign-left valign-middle">Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>200</strong></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">OK</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="#_74cc9cae850450b802bc1e6adbbb148c">通用的ajax响应实体«列表数据实体«服务实体»»</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>201</strong></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Created</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>401</strong></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Unauthorized</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>403</strong></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Forbidden</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>404</strong></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Not Found</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_consumes_2"><a class="anchor" href="#_consumes_2"></a><a class="link" href="#_consumes_2">Consumes</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><code>application/json</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_produces_2"><a class="anchor" href="#_produces_2"></a><a class="link" href="#_produces_2">Produces</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><code>application/json</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_validateusingpost_7"><a class="anchor" href="#_validateusingpost_7"></a><a class="link" href="#_validateusingpost_7">2.1.3. 服务校验</a></h4>
+<div class="literalblock">
+<div class="content">
+<pre>POST /service/validate</pre>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_parameters_3"><a class="anchor" href="#_parameters_3"></a><a class="link" href="#_parameters_3">Parameters</a></h5>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 16.6666%;">
+<col style="width: 50%;">
+<col style="width: 22.2223%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-middle">Type</th>
+<th class="tableblock halign-left valign-middle">Name</th>
+<th class="tableblock halign-left valign-middle">Description</th>
+<th class="tableblock halign-left valign-middle">Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>Query</strong></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>serviceId</strong><br>
+<em>required</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">服务的id</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_responses_3"><a class="anchor" href="#_responses_3"></a><a class="link" href="#_responses_3">Responses</a></h5>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 70%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-middle">HTTP Code</th>
+<th class="tableblock halign-left valign-middle">Description</th>
+<th class="tableblock halign-left valign-middle">Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>200</strong></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">OK</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="#_f52d64d3ee64a6e7fae7540feb14b52d">通用的ajax响应实体«boolean»</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>201</strong></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Created</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>401</strong></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Unauthorized</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>403</strong></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Forbidden</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>404</strong></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Not Found</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_consumes_3"><a class="anchor" href="#_consumes_3"></a><a class="link" href="#_consumes_3">Consumes</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><code>application/json</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_produces_3"><a class="anchor" href="#_produces_3"></a><a class="link" href="#_produces_3">Produces</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><code>application/json</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_18753a9fa1cf2216a3eee627360c9c98"><a class="anchor" href="#_18753a9fa1cf2216a3eee627360c9c98"></a><a class="link" href="#_18753a9fa1cf2216a3eee627360c9c98">2.2. 用户-角色接口</a></h3>
+<div class="paragraph">
+<p>登录验证,用户权限查询,角色权限查询,注销，由于本系统只提供可视化功能，该部分的数据固化即可，建议直接参考示例代码组织数据</p>
+</div>
+<div class="sect3">
+<h4 id="_loginusingpost_7"><a class="anchor" href="#_loginusingpost_7"></a><a class="link" href="#_loginusingpost_7">2.2.1. 用户登录认证</a></h4>
+<div class="literalblock">
+<div class="content">
+<pre>POST /auth/login</pre>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_description_2"><a class="anchor" href="#_description_2"></a><a class="link" href="#_description_2">Description</a></h5>
+<div class="paragraph">
+<p>用户名/密码固化为：admin/admin.123</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_parameters_4"><a class="anchor" href="#_parameters_4"></a><a class="link" href="#_parameters_4">Parameters</a></h5>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 16.6666%;">
+<col style="width: 50%;">
+<col style="width: 22.2223%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-middle">Type</th>
+<th class="tableblock halign-left valign-middle">Name</th>
+<th class="tableblock halign-left valign-middle">Description</th>
+<th class="tableblock halign-left valign-middle">Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>Body</strong></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>user</strong><br>
+<em>required</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">用户名和密码，建议定义实体SystemUser,通过@RequestBody SysUser user接收</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="#_sysuser">SysUser</a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
 <h5 id="_responses_4"><a class="anchor" href="#_responses_4"></a><a class="link" href="#_responses_4">Responses</a></h5>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -934,7 +950,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>200</strong></p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">OK</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="#_c76f211cb722229e2463065627701bcf">AjaxResponseBody«响应的列表数据«运行日志»»</a></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="#_25845957de6634d9341b7f81124d59a2">通用的ajax响应实体«Map«string,object»»</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>201</strong></p></td>
@@ -980,17 +996,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 </div>
-</div>
-<div class="sect2">
-<h3 id="_role-controller_resource"><a class="anchor" href="#_role-controller_resource"></a><a class="link" href="#_role-controller_resource">4.3. Role-controller</a></h3>
-<div class="paragraph">
-<p>Role Controller</p>
-</div>
 <div class="sect3">
-<h4 id="_getroleinfousingget"><a class="anchor" href="#_getroleinfousingget"></a><a class="link" href="#_getroleinfousingget">4.3.1. getRoleInfo</a></h4>
+<h4 id="_dologoutusingpost_7"><a class="anchor" href="#_dologoutusingpost_7"></a><a class="link" href="#_dologoutusingpost_7">2.2.2. 注销</a></h4>
 <div class="literalblock">
 <div class="content">
-<pre>GET /system/role</pre>
+<pre>POST /auth/logout</pre>
 </div>
 </div>
 <div class="sect4">
@@ -1012,98 +1022,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>200</strong></p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">OK</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="#_5af2fd62481f7d534398cf44d78042bf">AjaxResponseBody«Map«string,SysRole»»</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>401</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Unauthorized</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>403</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Forbidden</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>404</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Not Found</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_produces_5"><a class="anchor" href="#_produces_5"></a><a class="link" href="#_produces_5">Produces</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><code><strong>/</strong></code></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_service-controller_resource"><a class="anchor" href="#_service-controller_resource"></a><a class="link" href="#_service-controller_resource">4.4. Service-controller</a></h3>
-<div class="paragraph">
-<p>Service Controller</p>
-</div>
-<div class="sect3">
-<h4 id="_getexamplecodeusingpost"><a class="anchor" href="#_getexamplecodeusingpost"></a><a class="link" href="#_getexamplecodeusingpost">4.4.1. 查询示例代码</a></h4>
-<div class="literalblock">
-<div class="content">
-<pre>POST /service/getExampleCode</pre>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_parameters_3"><a class="anchor" href="#_parameters_3"></a><a class="link" href="#_parameters_3">Parameters</a></h5>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 11.1111%;">
-<col style="width: 16.6666%;">
-<col style="width: 50%;">
-<col style="width: 22.2223%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">Type</th>
-<th class="tableblock halign-left valign-middle">Name</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>Query</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>type</strong><br>
-<em>required</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">编程语言类型,枚举类型，0:java,1:Spring Boot,2:Spring cloud,3:NodeJS,4:C++,5:Python</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int32)</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_responses_6"><a class="anchor" href="#_responses_6"></a><a class="link" href="#_responses_6">Responses</a></h5>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 10%;">
-<col style="width: 70%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">HTTP Code</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>200</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">OK</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="#_67378c9e5702e29a7e05cb3d9d7b88a7">AjaxResponseBody«string»</a></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="#_e9727bfe905a8a298eae59f4424125e0">通用的ajax响应实体</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>201</strong></p></td>
@@ -1139,31 +1058,25 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect4">
-<h5 id="_produces_6"><a class="anchor" href="#_produces_6"></a><a class="link" href="#_produces_6">Produces</a></h5>
+<h5 id="_produces_5"><a class="anchor" href="#_produces_5"></a><a class="link" href="#_produces_5">Produces</a></h5>
 <div class="ulist">
 <ul>
 <li>
-<p><code><strong>/</strong></code></p>
+<p><code>application/json</code></p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_getservicelistusingpost"><a class="anchor" href="#_getservicelistusingpost"></a><a class="link" href="#_getservicelistusingpost">4.4.2. 查询系统上架的服务列表</a></h4>
+<h4 id="_getuserinfousingget_7"><a class="anchor" href="#_getuserinfousingget_7"></a><a class="link" href="#_getuserinfousingget_7">2.2.3. 查询用户</a></h4>
 <div class="literalblock">
 <div class="content">
-<pre>POST /service/getServiceList</pre>
+<pre>GET /system/user</pre>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_description_2"><a class="anchor" href="#_description_2"></a><a class="link" href="#_description_2">Description</a></h5>
-<div class="paragraph">
-<p>支持多个字段的组合查询</p>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_parameters_4"><a class="anchor" href="#_parameters_4"></a><a class="link" href="#_parameters_4">Parameters</a></h5>
+<h5 id="_parameters_5"><a class="anchor" href="#_parameters_5"></a><a class="link" href="#_parameters_5">Parameters</a></h5>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -1181,21 +1094,77 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>Query</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>pageNo</strong><br>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>Header</strong></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>access-token</strong><br>
 <em>required</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">分页查询的第{pageNo}页</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int32)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>Query</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>pageSize</strong><br>
-<em>required</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">分页查询每页显示{pageSize}条记录</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int32)</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">access-token</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
 </tr>
 </tbody>
 </table>
+</div>
+<div class="sect4">
+<h5 id="_responses_6"><a class="anchor" href="#_responses_6"></a><a class="link" href="#_responses_6">Responses</a></h5>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 10%;">
+<col style="width: 70%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-middle">HTTP Code</th>
+<th class="tableblock halign-left valign-middle">Description</th>
+<th class="tableblock halign-left valign-middle">Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>200</strong></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">OK</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="#_f20947c1556c91f2254c4b143a18cb2a">通用的ajax响应实体«用户实体»</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>401</strong></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Unauthorized</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>403</strong></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Forbidden</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>404</strong></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Not Found</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_produces_6"><a class="anchor" href="#_produces_6"></a><a class="link" href="#_produces_6">Produces</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><code>application/json</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_32d33db4b047ec05d31e5d1563ff6bf1"><a class="anchor" href="#_32d33db4b047ec05d31e5d1563ff6bf1"></a><a class="link" href="#_32d33db4b047ec05d31e5d1563ff6bf1">2.3. 统计查询接口</a></h3>
+<div class="paragraph">
+<p>用于系统相关服务、接口的调用情况的查询，前台采取各种图表的形式作可视化展示</p>
+</div>
+<div class="sect3">
+<h4 id="_getapiinfousingpost_7"><a class="anchor" href="#_getapiinfousingpost_7"></a><a class="link" href="#_getapiinfousingpost_7">2.3.1. 统计接口的相关信息</a></h4>
+<div class="literalblock">
+<div class="content">
+<pre>POST /stats/getAPIStats</pre>
+</div>
 </div>
 <div class="sect4">
 <h5 id="_responses_7"><a class="anchor" href="#_responses_7"></a><a class="link" href="#_responses_7">Responses</a></h5>
@@ -1216,7 +1185,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>200</strong></p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">OK</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="#_0ae82afdd09bfcaaa14d4edea3f24eba">AjaxResponseBody«响应的列表数据«服务实体»»</a></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="#_a79d70da716b419d1c89ed6341b1ca5c">通用的ajax响应实体«接口统计实体»</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>201</strong></p></td>
@@ -1262,18 +1231,47 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 </div>
-</div>
-<div class="sect2">
-<h3 id="_statistics-controller_resource"><a class="anchor" href="#_statistics-controller_resource"></a><a class="link" href="#_statistics-controller_resource">4.5. Statistics-controller</a></h3>
-<div class="paragraph">
-<p>Statistics Controller</p>
-</div>
 <div class="sect3">
-<h4 id="_getapiinfousingpost"><a class="anchor" href="#_getapiinfousingpost"></a><a class="link" href="#_getapiinfousingpost">4.5.1. 统计在本系统中的接口</a></h4>
+<h4 id="_getcalledtop10apilistusingpost_7"><a class="anchor" href="#_getcalledtop10apilistusingpost_7"></a><a class="link" href="#_getcalledtop10apilistusingpost_7">2.3.2. 统计被调用次数最多的前10个接口的名称及对应的数量</a></h4>
 <div class="literalblock">
 <div class="content">
-<pre>POST /stats/getAPIStats</pre>
+<pre>POST /stats/getCalledTop10APIs</pre>
 </div>
+</div>
+<div class="sect4">
+<h5 id="_parameters_6"><a class="anchor" href="#_parameters_6"></a><a class="link" href="#_parameters_6">Parameters</a></h5>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 16.6666%;">
+<col style="width: 50%;">
+<col style="width: 22.2223%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-middle">Type</th>
+<th class="tableblock halign-left valign-middle">Name</th>
+<th class="tableblock halign-left valign-middle">Description</th>
+<th class="tableblock halign-left valign-middle">Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>Query</strong></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>endDate</strong><br>
+<em>required</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">统计的结束时间,格式：'YYYY-MM-DD hh:mm:ss'</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>Query</strong></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>startDate</strong><br>
+<em>required</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">统计的开始时间,格式：'YYYY-MM-DD hh:mm:ss'</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect4">
 <h5 id="_responses_8"><a class="anchor" href="#_responses_8"></a><a class="link" href="#_responses_8">Responses</a></h5>
@@ -1294,7 +1292,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>200</strong></p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">OK</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="#_afa2a891eb0fd048fdef50aeaf94bfc1">AjaxResponseBody«api的统计数据»</a></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="#_a375456e12b1576305b7fecfcf3c8c21">通用的ajax响应实体«List«接口»»</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>201</strong></p></td>
@@ -1341,46 +1339,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect3">
-<h4 id="_getcalledtop10apilistusingpost"><a class="anchor" href="#_getcalledtop10apilistusingpost"></a><a class="link" href="#_getcalledtop10apilistusingpost">4.5.2. 统计累计被调用次数最多的前10个接口的名称及对应的数量</a></h4>
+<h4 id="_getproducerinfousingpost_7"><a class="anchor" href="#_getproducerinfousingpost_7"></a><a class="link" href="#_getproducerinfousingpost_7">2.3.3. 统计已注册生产者的相关信息</a></h4>
 <div class="literalblock">
 <div class="content">
-<pre>POST /stats/getCalledTop10APIs</pre>
+<pre>POST /stats/getProducerStats</pre>
 </div>
-</div>
-<div class="sect4">
-<h5 id="_parameters_5"><a class="anchor" href="#_parameters_5"></a><a class="link" href="#_parameters_5">Parameters</a></h5>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 11.1111%;">
-<col style="width: 16.6666%;">
-<col style="width: 50%;">
-<col style="width: 22.2223%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">Type</th>
-<th class="tableblock halign-left valign-middle">Name</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>Query</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>endDate</strong><br>
-<em>required</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">统计的结束时间,格式：'YYYY-MM-DD hh:mm:ss'</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>Query</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>startDate</strong><br>
-<em>required</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">统计的开始时间,格式：'YYYY-MM-DD hh:mm:ss'</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
-</tr>
-</tbody>
-</table>
 </div>
 <div class="sect4">
 <h5 id="_responses_9"><a class="anchor" href="#_responses_9"></a><a class="link" href="#_responses_9">Responses</a></h5>
@@ -1401,7 +1364,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>200</strong></p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">OK</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="#_4db3c87999de3efb2fb172071793ede1">AjaxResponseBody«List«接口»»</a></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="#_872c422ca6e098840dbfe2500b303699">通用的ajax响应实体«生产者的统计数据»</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>201</strong></p></td>
@@ -1448,11 +1411,46 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect3">
-<h4 id="_getproducerinfousingpost"><a class="anchor" href="#_getproducerinfousingpost"></a><a class="link" href="#_getproducerinfousingpost">4.5.3. 统计在本系统中注册的生产者的相关数</a></h4>
+<h4 id="_getsuccessratiostatsusingpost_7"><a class="anchor" href="#_getsuccessratiostatsusingpost_7"></a><a class="link" href="#_getsuccessratiostatsusingpost_7">2.3.4. 统计接口调用成功率</a></h4>
 <div class="literalblock">
 <div class="content">
-<pre>POST /stats/getProducerStats</pre>
+<pre>POST /stats/getSuccessRatioStats</pre>
 </div>
+</div>
+<div class="sect4">
+<h5 id="_parameters_7"><a class="anchor" href="#_parameters_7"></a><a class="link" href="#_parameters_7">Parameters</a></h5>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 16.6666%;">
+<col style="width: 50%;">
+<col style="width: 22.2223%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-middle">Type</th>
+<th class="tableblock halign-left valign-middle">Name</th>
+<th class="tableblock halign-left valign-middle">Description</th>
+<th class="tableblock halign-left valign-middle">Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>Query</strong></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>endDate</strong><br>
+<em>required</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">统计的结束时间,格式：'YYYY-MM-DD hh:mm:ss'</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>Query</strong></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>startDate</strong><br>
+<em>required</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">统计的开始时间,格式：'YYYY-MM-DD hh:mm:ss'</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect4">
 <h5 id="_responses_10"><a class="anchor" href="#_responses_10"></a><a class="link" href="#_responses_10">Responses</a></h5>
@@ -1473,7 +1471,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>200</strong></p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">OK</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="#_d7cfd45b15f94816afee2fa8ffb3104d">AjaxResponseBody«生产者的统计数据»</a></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="#_2be77b66e2e2986665fc4672afbf9b05">通用的ajax响应实体«服务调用成功率统计»</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>201</strong></p></td>
@@ -1520,46 +1518,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect3">
-<h4 id="_getsuccessratiostatsusingpost"><a class="anchor" href="#_getsuccessratiostatsusingpost"></a><a class="link" href="#_getsuccessratiostatsusingpost">4.5.4. 接口调用成功率统计</a></h4>
+<h4 id="_gettop5exceptionapiusingpost_7"><a class="anchor" href="#_gettop5exceptionapiusingpost_7"></a><a class="link" href="#_gettop5exceptionapiusingpost_7">2.3.5. 统计出错接口top5</a></h4>
 <div class="literalblock">
 <div class="content">
-<pre>POST /stats/getSuccessRatioStats</pre>
+<pre>POST /stats/getTop5ExceptionAPI</pre>
 </div>
-</div>
-<div class="sect4">
-<h5 id="_parameters_6"><a class="anchor" href="#_parameters_6"></a><a class="link" href="#_parameters_6">Parameters</a></h5>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 11.1111%;">
-<col style="width: 16.6666%;">
-<col style="width: 50%;">
-<col style="width: 22.2223%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">Type</th>
-<th class="tableblock halign-left valign-middle">Name</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>Query</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>endDate</strong><br>
-<em>required</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">统计的结束时间,格式：'YYYY-MM-DD hh:mm:ss'</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>Query</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>startDate</strong><br>
-<em>required</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">统计的开始时间,格式：'YYYY-MM-DD hh:mm:ss'</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
-</tr>
-</tbody>
-</table>
 </div>
 <div class="sect4">
 <h5 id="_responses_11"><a class="anchor" href="#_responses_11"></a><a class="link" href="#_responses_11">Responses</a></h5>
@@ -1580,7 +1543,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>200</strong></p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">OK</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="#_bf00d872ed7b7bd7424256fd24ef7227">AjaxResponseBody«服务调用成功率统计»</a></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="#_9672153e3750bfa0fc42033d06322ba4">通用的ajax响应实体«List«出错接口实体»»</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>201</strong></p></td>
@@ -1627,10 +1590,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect3">
-<h4 id="_gettop5exceptionapiusingpost"><a class="anchor" href="#_gettop5exceptionapiusingpost"></a><a class="link" href="#_gettop5exceptionapiusingpost">4.5.5. 统计出错接口top5</a></h4>
+<h4 id="_gettop5timeconsumingapiusingpost_7"><a class="anchor" href="#_gettop5timeconsumingapiusingpost_7"></a><a class="link" href="#_gettop5timeconsumingapiusingpost_7">2.3.6. 统计耗时接口top5</a></h4>
 <div class="literalblock">
 <div class="content">
-<pre>POST /stats/getTop5ExceptionAPI</pre>
+<pre>POST /stats/getTop5TimeConsumingAPI</pre>
 </div>
 </div>
 <div class="sect4">
@@ -1652,7 +1615,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>200</strong></p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">OK</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="#_443d7a12239336eccb05e27d6290ea17">AjaxResponseBody«List«出错接口»»</a></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="#_e4194051c03c1366cbaa7952a21ff49b">通用的ajax响应实体«List«耗时接口»»</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>201</strong></p></td>
@@ -1699,11 +1662,46 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect3">
-<h4 id="_gettop5timeconsumingapiusingpost"><a class="anchor" href="#_gettop5timeconsumingapiusingpost"></a><a class="link" href="#_gettop5timeconsumingapiusingpost">4.5.6. 统计出错接口top5</a></h4>
+<h4 id="_getwarningrationstatsusingpost_7"><a class="anchor" href="#_getwarningrationstatsusingpost_7"></a><a class="link" href="#_getwarningrationstatsusingpost_7">2.3.7. 统计接口调用告警率</a></h4>
 <div class="literalblock">
 <div class="content">
-<pre>POST /stats/getTop5TimeConsumingAPI</pre>
+<pre>POST /stats/getWarningRationStats</pre>
 </div>
+</div>
+<div class="sect4">
+<h5 id="_parameters_8"><a class="anchor" href="#_parameters_8"></a><a class="link" href="#_parameters_8">Parameters</a></h5>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 11.1111%;">
+<col style="width: 16.6666%;">
+<col style="width: 50%;">
+<col style="width: 22.2223%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-middle">Type</th>
+<th class="tableblock halign-left valign-middle">Name</th>
+<th class="tableblock halign-left valign-middle">Description</th>
+<th class="tableblock halign-left valign-middle">Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>Query</strong></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>endDate</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">endDate</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>Query</strong></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>startDate</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">startDate</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect4">
 <h5 id="_responses_13"><a class="anchor" href="#_responses_13"></a><a class="link" href="#_responses_13">Responses</a></h5>
@@ -1724,7 +1722,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>200</strong></p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">OK</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="#_cfbeb36355e8f9d6d52d1a2fb68ef9e4">AjaxResponseBody«List«耗时接口»»</a></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="#_f57fdc61bf3353ddd51f20897e3d353f">通用的ajax响应实体«服务调用告警率统计»</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>201</strong></p></td>
@@ -1770,15 +1768,27 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 </div>
+</div>
+<div class="sect2">
+<h3 id="_b30afa79f4284265246d90eb0345699e"><a class="anchor" href="#_b30afa79f4284265246d90eb0345699e"></a><a class="link" href="#_b30afa79f4284265246d90eb0345699e">2.4. 运行日志接口</a></h3>
+<div class="paragraph">
+<p>多条件筛选 查询日志的列表</p>
+</div>
 <div class="sect3">
-<h4 id="_getwarningrationstatsusingpost"><a class="anchor" href="#_getwarningrationstatsusingpost"></a><a class="link" href="#_getwarningrationstatsusingpost">4.5.7. 统计接口调用告警率统计</a></h4>
+<h4 id="_getloglistusingpost_7"><a class="anchor" href="#_getloglistusingpost_7"></a><a class="link" href="#_getloglistusingpost_7">2.4.1. 查询系统的运行日志</a></h4>
 <div class="literalblock">
 <div class="content">
-<pre>POST /stats/getWarningRationStats</pre>
+<pre>POST /log/getLogList</pre>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_parameters_7"><a class="anchor" href="#_parameters_7"></a><a class="link" href="#_parameters_7">Parameters</a></h5>
+<h5 id="_description_3"><a class="anchor" href="#_description_3"></a><a class="link" href="#_description_3">Description</a></h5>
+<div class="paragraph">
+<p>支持多个字段的组合查询</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_parameters_9"><a class="anchor" href="#_parameters_9"></a><a class="link" href="#_parameters_9">Parameters</a></h5>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 11.1111%;">
@@ -1797,17 +1807,17 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>Query</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>endDate</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">endDate</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>pageNo</strong><br>
+<em>required</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">分页查询的第{pageNo}页</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int32)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>Query</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>startDate</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">startDate</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>pageSize</strong><br>
+<em>required</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">分页查询每页显示{pageSize}条记录</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int32)</p></td>
 </tr>
 </tbody>
 </table>
@@ -1831,7 +1841,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>200</strong></p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">OK</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="#_819a1a1981a11cc50697ccd737879e96">AjaxResponseBody«服务调用告警率统计»</a></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="#_a73e95106fa69d7fd6ee00ffc5273158">通用的ajax响应实体«列表数据实体«日志实体»»</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>201</strong></p></td>
@@ -1871,70 +1881,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="ulist">
 <ul>
 <li>
-<p><code><strong>/</strong></code></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_user-controller_resource"><a class="anchor" href="#_user-controller_resource"></a><a class="link" href="#_user-controller_resource">4.6. User-controller</a></h3>
-<div class="paragraph">
-<p>User Controller</p>
-</div>
-<div class="sect3">
-<h4 id="_getuserinfousingget"><a class="anchor" href="#_getuserinfousingget"></a><a class="link" href="#_getuserinfousingget">4.6.1. getUserInfo</a></h4>
-<div class="literalblock">
-<div class="content">
-<pre>GET /system/user</pre>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_responses_15"><a class="anchor" href="#_responses_15"></a><a class="link" href="#_responses_15">Responses</a></h5>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 10%;">
-<col style="width: 70%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">HTTP Code</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>200</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">OK</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="#_73a58e14a88aef8abbf03bf80233b117">AjaxResponseBody«SysUser»</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>401</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Unauthorized</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>403</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Forbidden</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>404</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">Not Found</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">No Content</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="_produces_15"><a class="anchor" href="#_produces_15"></a><a class="link" href="#_produces_15">Produces</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><code><strong>/</strong></code></p>
+<p><code>application/json</code></p>
 </li>
 </ul>
 </div>
@@ -1944,768 +1891,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_definitions"><a class="anchor" href="#_definitions"></a><a class="link" href="#_definitions">5. Definitions</a></h2>
+<h2 id="_definitions"><a class="anchor" href="#_definitions"></a><a class="link" href="#_definitions">3. Definitions</a></h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_actionentity"><a class="anchor" href="#_actionentity"></a><a class="link" href="#_actionentity">5.1. ActionEntity</a></h3>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 42.8571%;">
-<col style="width: 57.1429%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">Name</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>action</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>defaultCheck</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>describe</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_443d7a12239336eccb05e27d6290ea17"><a class="anchor" href="#_443d7a12239336eccb05e27d6290ea17"></a><a class="link" href="#_443d7a12239336eccb05e27d6290ea17">5.2. AjaxResponseBody«List«出错接口»»</a></h3>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 42.8571%;">
-<col style="width: 57.1429%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">Name</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>code</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int32)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>message</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>result</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">&lt; <a href="#_d9a8e5c91743298623ced63ad4347464">出错接口</a> &gt; array</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>timestamp</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_4db3c87999de3efb2fb172071793ede1"><a class="anchor" href="#_4db3c87999de3efb2fb172071793ede1"></a><a class="link" href="#_4db3c87999de3efb2fb172071793ede1">5.3. AjaxResponseBody«List«接口»»</a></h3>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 42.8571%;">
-<col style="width: 57.1429%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">Name</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>code</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int32)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>message</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>result</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">&lt; <a href="#_54ea89b497ec3bb319c68844dfa3687f">接口</a> &gt; array</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>timestamp</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_cfbeb36355e8f9d6d52d1a2fb68ef9e4"><a class="anchor" href="#_cfbeb36355e8f9d6d52d1a2fb68ef9e4"></a><a class="link" href="#_cfbeb36355e8f9d6d52d1a2fb68ef9e4">5.4. AjaxResponseBody«List«耗时接口»»</a></h3>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 42.8571%;">
-<col style="width: 57.1429%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">Name</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>code</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int32)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>message</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>result</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">&lt; <a href="#_4d45d5c394b3de379fa283c5ef9559b2">耗时接口</a> &gt; array</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>timestamp</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_5af2fd62481f7d534398cf44d78042bf"><a class="anchor" href="#_5af2fd62481f7d534398cf44d78042bf"></a><a class="link" href="#_5af2fd62481f7d534398cf44d78042bf">5.5. AjaxResponseBody«Map«string,SysRole»»</a></h3>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 42.8571%;">
-<col style="width: 57.1429%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">Name</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>code</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int32)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>message</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>result</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">&lt; string, <a href="#_sysrole">SysRole</a> &gt; map</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>timestamp</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_c1493923f16ffc6a98d4acbbf0f2a682"><a class="anchor" href="#_c1493923f16ffc6a98d4acbbf0f2a682"></a><a class="link" href="#_c1493923f16ffc6a98d4acbbf0f2a682">5.6. AjaxResponseBody«Map«string,object»»</a></h3>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 42.8571%;">
-<col style="width: 57.1429%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">Name</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>code</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int32)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>message</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>result</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">object</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>timestamp</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_73a58e14a88aef8abbf03bf80233b117"><a class="anchor" href="#_73a58e14a88aef8abbf03bf80233b117"></a><a class="link" href="#_73a58e14a88aef8abbf03bf80233b117">5.7. AjaxResponseBody«SysUser»</a></h3>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 42.8571%;">
-<col style="width: 57.1429%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">Name</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>code</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int32)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>message</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>result</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="#_sysuser">SysUser</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>timestamp</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_afa2a891eb0fd048fdef50aeaf94bfc1"><a class="anchor" href="#_afa2a891eb0fd048fdef50aeaf94bfc1"></a><a class="link" href="#_afa2a891eb0fd048fdef50aeaf94bfc1">5.8. AjaxResponseBody«api的统计数据»</a></h3>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 42.8571%;">
-<col style="width: 57.1429%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">Name</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>code</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int32)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>message</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>result</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="#_c597ef4bc4160c66a5c6a594b6b27678">api的统计数据</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>timestamp</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_67378c9e5702e29a7e05cb3d9d7b88a7"><a class="anchor" href="#_67378c9e5702e29a7e05cb3d9d7b88a7"></a><a class="link" href="#_67378c9e5702e29a7e05cb3d9d7b88a7">5.9. AjaxResponseBody«string»</a></h3>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 42.8571%;">
-<col style="width: 57.1429%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">Name</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>code</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int32)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>message</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>result</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>timestamp</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_0ae82afdd09bfcaaa14d4edea3f24eba"><a class="anchor" href="#_0ae82afdd09bfcaaa14d4edea3f24eba"></a><a class="link" href="#_0ae82afdd09bfcaaa14d4edea3f24eba">5.10. AjaxResponseBody«响应的列表数据«服务实体»»</a></h3>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 42.8571%;">
-<col style="width: 57.1429%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">Name</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>code</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int32)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>message</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>result</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="#_813113262d6f070d397f0fd2db0c8acd">响应的列表数据«服务实体»</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>timestamp</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_c76f211cb722229e2463065627701bcf"><a class="anchor" href="#_c76f211cb722229e2463065627701bcf"></a><a class="link" href="#_c76f211cb722229e2463065627701bcf">5.11. AjaxResponseBody«响应的列表数据«运行日志»»</a></h3>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 42.8571%;">
-<col style="width: 57.1429%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">Name</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>code</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int32)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>message</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>result</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="#_4e5d824a435ef60b6528f3bdf8cc994b">响应的列表数据«运行日志»</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>timestamp</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_819a1a1981a11cc50697ccd737879e96"><a class="anchor" href="#_819a1a1981a11cc50697ccd737879e96"></a><a class="link" href="#_819a1a1981a11cc50697ccd737879e96">5.12. AjaxResponseBody«服务调用告警率统计»</a></h3>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 42.8571%;">
-<col style="width: 57.1429%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">Name</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>code</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int32)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>message</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>result</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="#_de6b363af8acdd2edc69104626063ab8">服务调用告警率统计</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>timestamp</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_bf00d872ed7b7bd7424256fd24ef7227"><a class="anchor" href="#_bf00d872ed7b7bd7424256fd24ef7227"></a><a class="link" href="#_bf00d872ed7b7bd7424256fd24ef7227">5.13. AjaxResponseBody«服务调用成功率统计»</a></h3>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 42.8571%;">
-<col style="width: 57.1429%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">Name</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>code</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int32)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>message</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>result</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="#_b5fde2a73252d6b647a4715e757ad108">服务调用成功率统计</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>timestamp</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_d7cfd45b15f94816afee2fa8ffb3104d"><a class="anchor" href="#_d7cfd45b15f94816afee2fa8ffb3104d"></a><a class="link" href="#_d7cfd45b15f94816afee2fa8ffb3104d">5.14. AjaxResponseBody«生产者的统计数据»</a></h3>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 42.8571%;">
-<col style="width: 57.1429%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">Name</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>code</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int32)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>message</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>result</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="#_d2399114a411d0f9d77739865d2c5760">生产者的统计数据</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>timestamp</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_4403db69846f43b54f667a7502e2f133"><a class="anchor" href="#_4403db69846f43b54f667a7502e2f133"></a><a class="link" href="#_4403db69846f43b54f667a7502e2f133">5.15. Map«string,SysRole»</a></h3>
-<div class="paragraph">
-<p><em>Type</em> : &lt; string, <a href="#_sysrole">SysRole</a> &gt; map</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_syspermission"><a class="anchor" href="#_syspermission"></a><a class="link" href="#_syspermission">5.16. SysPermission</a></h3>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 42.8571%;">
-<col style="width: 57.1429%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">Name</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>actionEntityList</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">&lt; <a href="#_actionentity">ActionEntity</a> &gt; array</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>actionList</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">&lt; string &gt; array</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>actions</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>dataAccess</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>permissionId</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>permissionName</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>roleId</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_sysrole"><a class="anchor" href="#_sysrole"></a><a class="link" href="#_sysrole">5.17. SysRole</a></h3>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 42.8571%;">
-<col style="width: 57.1429%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">Name</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>createTime</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>creatorId</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>deleted</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int32)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>describe</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>id</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>name</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>permissionList</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">&lt; string &gt; array</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>permissions</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">&lt; <a href="#_syspermission">SysPermission</a> &gt; array</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_sysuser"><a class="anchor" href="#_sysuser"></a><a class="link" href="#_sysuser">5.18. SysUser</a></h3>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 42.8571%;">
-<col style="width: 57.1429%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">Name</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>avatar</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>createTime</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>creatorId</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>deleted</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>id</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>lastLoginIp</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>lastLoginTime</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>merchantCode</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>password</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>role</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="#_sysrole">SysRole</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>roleId</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>status</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>telephone</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>username</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_c597ef4bc4160c66a5c6a594b6b27678"><a class="anchor" href="#_c597ef4bc4160c66a5c6a594b6b27678"></a><a class="link" href="#_c597ef4bc4160c66a5c6a594b6b27678">5.19. api的统计数据</a></h3>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 16.6666%;">
-<col style="width: 61.1111%;">
-<col style="width: 22.2223%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">Name</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>calledCount</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">调用总次数</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int32)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>calledDailyCount</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">日均调用数量</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int32)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>monthlyNum</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">月均接入量，平均每个月的接入数量</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int32)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>totalCount</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">接入本平台的接口总数</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int32)</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_d9a8e5c91743298623ced63ad4347464"><a class="anchor" href="#_d9a8e5c91743298623ced63ad4347464"></a><a class="link" href="#_d9a8e5c91743298623ced63ad4347464">5.20. 出错接口</a></h3>
+<h3 id="_9859bc517e4d1c6d9d412e4d1c8e6f1d"><a class="anchor" href="#_9859bc517e4d1c6d9d412e4d1c8e6f1d"></a><a class="link" href="#_9859bc517e4d1c6d9d412e4d1c8e6f1d">3.1. 出错接口实体</a></h3>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 16.6666%;">
@@ -2754,7 +1943,56 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </table>
 </div>
 <div class="sect2">
-<h3 id="_813113262d6f070d397f0fd2db0c8acd"><a class="anchor" href="#_813113262d6f070d397f0fd2db0c8acd"></a><a class="link" href="#_813113262d6f070d397f0fd2db0c8acd">5.21. 响应的列表数据«服务实体»</a></h3>
+<h3 id="_e1f3f3f0dfad3313d97a6200f2247334"><a class="anchor" href="#_e1f3f3f0dfad3313d97a6200f2247334"></a><a class="link" href="#_e1f3f3f0dfad3313d97a6200f2247334">3.2. 列表数据实体«日志实体»</a></h3>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 61.1111%;">
+<col style="width: 22.2223%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-middle">Name</th>
+<th class="tableblock halign-left valign-middle">Description</th>
+<th class="tableblock halign-left valign-middle">Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>data</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">列表数据</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">&lt; <a href="#_d0367595224ea4daa25ef9a1d2d0de1e">日志实体</a> &gt; array</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>pageNo</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">第几页</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int64)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>pageSize</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">每页的记录条数</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int64)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>totalCount</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">记录总数</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int64)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>totalPage</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">总页数</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int32)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_d94fadd1fb99167ac85c5d5cf889be31"><a class="anchor" href="#_d94fadd1fb99167ac85c5d5cf889be31"></a><a class="link" href="#_d94fadd1fb99167ac85c5d5cf889be31">3.3. 列表数据实体«服务实体»</a></h3>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 16.6666%;">
@@ -2803,56 +2041,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </table>
 </div>
 <div class="sect2">
-<h3 id="_4e5d824a435ef60b6528f3bdf8cc994b"><a class="anchor" href="#_4e5d824a435ef60b6528f3bdf8cc994b"></a><a class="link" href="#_4e5d824a435ef60b6528f3bdf8cc994b">5.22. 响应的列表数据«运行日志»</a></h3>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 16.6666%;">
-<col style="width: 61.1111%;">
-<col style="width: 22.2223%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">Name</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>data</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">列表数据</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">&lt; <a href="#_284a98fa89bf61fbe570673f129cb69b">运行日志</a> &gt; array</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>pageNo</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">第几页</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int64)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>pageSize</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">每页的记录条数</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int64)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>totalCount</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">记录总数</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int64)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>totalPage</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">总页数</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int32)</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_54ea89b497ec3bb319c68844dfa3687f"><a class="anchor" href="#_54ea89b497ec3bb319c68844dfa3687f"></a><a class="link" href="#_54ea89b497ec3bb319c68844dfa3687f">5.23. 接口</a></h3>
+<h3 id="_54ea89b497ec3bb319c68844dfa3687f"><a class="anchor" href="#_54ea89b497ec3bb319c68844dfa3687f"></a><a class="link" href="#_54ea89b497ec3bb319c68844dfa3687f">3.4. 接口</a></h3>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 16.6666%;">
@@ -2883,7 +2072,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </table>
 </div>
 <div class="sect2">
-<h3 id="_63ec592720d97a8bb8259f15cddbb2bb"><a class="anchor" href="#_63ec592720d97a8bb8259f15cddbb2bb"></a><a class="link" href="#_63ec592720d97a8bb8259f15cddbb2bb">5.24. 服务实体</a></h3>
+<h3 id="_dcef94380a957cedade31723689bea9e"><a class="anchor" href="#_dcef94380a957cedade31723689bea9e"></a><a class="link" href="#_dcef94380a957cedade31723689bea9e">3.5. 接口统计实体</a></h3>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 16.6666%;">
@@ -2899,150 +2088,15 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>callNo</strong><br>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>calledCount</strong><br>
 <em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">调用次数</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">调用总次数</p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int32)</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>description</strong><br>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>calledDailyCount</strong><br>
 <em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">服务描述</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>grade</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">密级,枚举类型,0:非秘,10:内密,15:商密,20:机密,30:绝密</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int32)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>id</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">主键，全局唯一</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>name</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">服务名称</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>status</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">状态,枚举类型,0:关闭,1:运行中,2:异常</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int32)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>supplier</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">服务供方</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>updatedAt</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">更新时间</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_de6b363af8acdd2edc69104626063ab8"><a class="anchor" href="#_de6b363af8acdd2edc69104626063ab8"></a><a class="link" href="#_de6b363af8acdd2edc69104626063ab8">5.25. 服务调用告警率统计</a></h3>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 16.6666%;">
-<col style="width: 61.1111%;">
-<col style="width: 22.2223%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">Name</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>acrossSecurityNum</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">跨密级访问数量</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int32)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>frequentCallNum</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">频繁调用次数</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int32)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>heavyParamsNum</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">请求参数过大</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int32)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>othersNum</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">其他原因</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int32)</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_b5fde2a73252d6b647a4715e757ad108"><a class="anchor" href="#_b5fde2a73252d6b647a4715e757ad108"></a><a class="link" href="#_b5fde2a73252d6b647a4715e757ad108">5.26. 服务调用成功率统计</a></h3>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 16.6666%;">
-<col style="width: 61.1111%;">
-<col style="width: 22.2223%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">Name</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>failNum</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">失败数量</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int32)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>successNum</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">成功数量</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int32)</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_d2399114a411d0f9d77739865d2c5760"><a class="anchor" href="#_d2399114a411d0f9d77739865d2c5760"></a><a class="link" href="#_d2399114a411d0f9d77739865d2c5760">5.27. 生产者的统计数据</a></h3>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 16.6666%;">
-<col style="width: 61.1111%;">
-<col style="width: 22.2223%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">Name</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>monthRatio</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">月同比（增加为+,减少为-，本月接入的数量与上月接入的数量之差除以上月的接入数量，乘以100，保留整数）</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">日均调用数量</p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int32)</p></td>
 </tr>
 <tr>
@@ -3054,63 +2108,14 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>totalCount</strong><br>
 <em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">接入本平台的系统总数（生产者数量）</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int32)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>weekRatio</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">周同比（增加为+,减少为-，本周接入的数量与上周接入的数量之差除以上周的接入数量，乘以100，保留整数）</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">接入本平台的接口总数</p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int32)</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="sect2">
-<h3 id="_4d45d5c394b3de379fa283c5ef9559b2"><a class="anchor" href="#_4d45d5c394b3de379fa283c5ef9559b2"></a><a class="link" href="#_4d45d5c394b3de379fa283c5ef9559b2">5.28. 耗时接口</a></h3>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 16.6666%;">
-<col style="width: 61.1111%;">
-<col style="width: 22.2223%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">Name</th>
-<th class="tableblock halign-left valign-middle">Description</th>
-<th class="tableblock halign-left valign-middle">Schema</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>belongSystem</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">接口所属系统</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>consumingTime</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">耗时，单位：毫秒</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int64)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>name</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">接口名称</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>rankIndex</strong><br>
-<em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">排名，按照调用时长排名</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int32)</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_284a98fa89bf61fbe570673f129cb69b"><a class="anchor" href="#_284a98fa89bf61fbe570673f129cb69b"></a><a class="link" href="#_284a98fa89bf61fbe570673f129cb69b">5.29. 运行日志</a></h3>
+<h3 id="_d0367595224ea4daa25ef9a1d2d0de1e"><a class="anchor" href="#_d0367595224ea4daa25ef9a1d2d0de1e"></a><a class="link" href="#_d0367595224ea4daa25ef9a1d2d0de1e">3.6. 日志实体</a></h3>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 16.6666%;">
@@ -3170,7 +2175,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>respTime</strong><br>
 <em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">响应时间</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">响应完成时间，格式:'YYYY-MM-DD hh:mm:ss'</p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
 </tr>
 <tr>
@@ -3188,8 +2193,954 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>visitTime</strong><br>
 <em>optional</em></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">访问时间</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">访问时间,格式:'YYYY-MM-DD hh:mm:ss'</p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_63ec592720d97a8bb8259f15cddbb2bb"><a class="anchor" href="#_63ec592720d97a8bb8259f15cddbb2bb"></a><a class="link" href="#_63ec592720d97a8bb8259f15cddbb2bb">3.7. 服务实体</a></h3>
+<div class="paragraph">
+<p>参考示例代码即可</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 61.1111%;">
+<col style="width: 22.2223%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-middle">Name</th>
+<th class="tableblock halign-left valign-middle">Description</th>
+<th class="tableblock halign-left valign-middle">Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>callNo</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">调用次数</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int32)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>description</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">服务描述</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>grade</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">密级,枚举类型,0:非秘,10:内密,15:商密,20:机密,30:绝密</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int32)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>id</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">主键，全局唯一</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>name</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">服务名称</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>status</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">状态,枚举类型,0:关闭,1:运行中,2:异常</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int32)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>supplier</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">服务供方</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>updatedAt</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">更新时间，格式:'YYYY-MM-DD hh:mm:ss'</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_de6b363af8acdd2edc69104626063ab8"><a class="anchor" href="#_de6b363af8acdd2edc69104626063ab8"></a><a class="link" href="#_de6b363af8acdd2edc69104626063ab8">3.8. 服务调用告警率统计</a></h3>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 61.1111%;">
+<col style="width: 22.2223%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-middle">Name</th>
+<th class="tableblock halign-left valign-middle">Description</th>
+<th class="tableblock halign-left valign-middle">Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>acrossSecurityNum</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">跨密级访问数量</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int32)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>frequentCallNum</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">频繁调用次数</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int32)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>heavyParamsNum</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">请求参数过大</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int32)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>othersNum</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">其他原因</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int32)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_b5fde2a73252d6b647a4715e757ad108"><a class="anchor" href="#_b5fde2a73252d6b647a4715e757ad108"></a><a class="link" href="#_b5fde2a73252d6b647a4715e757ad108">3.9. 服务调用成功率统计</a></h3>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 61.1111%;">
+<col style="width: 22.2223%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-middle">Name</th>
+<th class="tableblock halign-left valign-middle">Description</th>
+<th class="tableblock halign-left valign-middle">Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>failNum</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">失败数量</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int32)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>successNum</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">成功数量</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int32)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_d2399114a411d0f9d77739865d2c5760"><a class="anchor" href="#_d2399114a411d0f9d77739865d2c5760"></a><a class="link" href="#_d2399114a411d0f9d77739865d2c5760">3.10. 生产者的统计数据</a></h3>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 61.1111%;">
+<col style="width: 22.2223%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-middle">Name</th>
+<th class="tableblock halign-left valign-middle">Description</th>
+<th class="tableblock halign-left valign-middle">Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>monthRatio</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">月同比（增加为+,减少为-，本月接入的数量与上月接入的数量之差除以上月的接入数量，乘以100，保留整数）</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int32)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>monthlyNum</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">月均接入量，平均每个月的接入数量</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int32)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>totalCount</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">接入本平台的系统总数（生产者数量）</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int32)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>weekRatio</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">周同比（增加为+,减少为-，本周接入的数量与上周接入的数量之差除以上周的接入数量，乘以100，保留整数）</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int32)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_e0e14a34025d14efed947f52b6e65068"><a class="anchor" href="#_e0e14a34025d14efed947f52b6e65068"></a><a class="link" href="#_e0e14a34025d14efed947f52b6e65068">3.11. 用户实体</a></h3>
+<div class="paragraph">
+<p>参考示例代码组织数据即可</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 61.1111%;">
+<col style="width: 22.2223%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-middle">Name</th>
+<th class="tableblock halign-left valign-middle">Description</th>
+<th class="tableblock halign-left valign-middle">Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>avatar</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">头像</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>createTime</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>creatorId</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>deleted</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>id</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">用户唯一标识,通常对应数据库表中的主键</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>lastLoginIp</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>lastLoginTime</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>merchantCode</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>name</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">用户真实姓名<br>
+<strong>Example</strong> : <code>"张三"</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>password</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">密码</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>roleId</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>status</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>telephone</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>token</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>username</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">用户名<br>
+<strong>Example</strong> : <code>"xingguo"</code></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_4d45d5c394b3de379fa283c5ef9559b2"><a class="anchor" href="#_4d45d5c394b3de379fa283c5ef9559b2"></a><a class="link" href="#_4d45d5c394b3de379fa283c5ef9559b2">3.12. 耗时接口</a></h3>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 61.1111%;">
+<col style="width: 22.2223%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-middle">Name</th>
+<th class="tableblock halign-left valign-middle">Description</th>
+<th class="tableblock halign-left valign-middle">Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>belongSystem</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">接口所属系统</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>consumingTime</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">耗时，单位：毫秒</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int64)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>name</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">接口名称</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>rankIndex</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">排名，按照调用时长排名</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int32)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_e9727bfe905a8a298eae59f4424125e0"><a class="anchor" href="#_e9727bfe905a8a298eae59f4424125e0"></a><a class="link" href="#_e9727bfe905a8a298eae59f4424125e0">3.13. 通用的ajax响应实体</a></h3>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 61.1111%;">
+<col style="width: 22.2223%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-middle">Name</th>
+<th class="tableblock halign-left valign-middle">Description</th>
+<th class="tableblock halign-left valign-middle">Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>code</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">状态码，默认200</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int32)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>message</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">消息，请求成功时为空，请求发生异常时，显示异常的提示</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>result</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">结果，泛型</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">object</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>timestamp</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">时间戳</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int64)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_bb0efbe98ee59fe7f633cc4ff18bfd63"><a class="anchor" href="#_bb0efbe98ee59fe7f633cc4ff18bfd63"></a><a class="link" href="#_bb0efbe98ee59fe7f633cc4ff18bfd63">3.14. 通用的ajax响应实体«List«出错接口»»</a></h3>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 61.1111%;">
+<col style="width: 22.2223%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-middle">Name</th>
+<th class="tableblock halign-left valign-middle">Description</th>
+<th class="tableblock halign-left valign-middle">Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>code</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">状态码，默认200</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int32)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>message</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">消息，请求成功时为空，请求发生异常时，显示异常的提示</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>result</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">结果，泛型</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">&lt; <a href="#_d9a8e5c91743298623ced63ad4347464">出错接口</a> &gt; array</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>timestamp</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">时间戳</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int64)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_a375456e12b1576305b7fecfcf3c8c21"><a class="anchor" href="#_a375456e12b1576305b7fecfcf3c8c21"></a><a class="link" href="#_a375456e12b1576305b7fecfcf3c8c21">3.15. 通用的ajax响应实体«List«接口»»</a></h3>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 61.1111%;">
+<col style="width: 22.2223%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-middle">Name</th>
+<th class="tableblock halign-left valign-middle">Description</th>
+<th class="tableblock halign-left valign-middle">Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>code</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">状态码，默认200</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int32)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>message</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">消息，请求成功时为空，请求发生异常时，显示异常的提示</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>result</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">结果，泛型</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">&lt; <a href="#_54ea89b497ec3bb319c68844dfa3687f">接口</a> &gt; array</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>timestamp</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">时间戳</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int64)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_e4194051c03c1366cbaa7952a21ff49b"><a class="anchor" href="#_e4194051c03c1366cbaa7952a21ff49b"></a><a class="link" href="#_e4194051c03c1366cbaa7952a21ff49b">3.16. 通用的ajax响应实体«List«耗时接口»»</a></h3>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 61.1111%;">
+<col style="width: 22.2223%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-middle">Name</th>
+<th class="tableblock halign-left valign-middle">Description</th>
+<th class="tableblock halign-left valign-middle">Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>code</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">状态码，默认200</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int32)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>message</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">消息，请求成功时为空，请求发生异常时，显示异常的提示</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>result</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">结果，泛型</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">&lt; <a href="#_4d45d5c394b3de379fa283c5ef9559b2">耗时接口</a> &gt; array</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>timestamp</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">时间戳</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int64)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_25845957de6634d9341b7f81124d59a2"><a class="anchor" href="#_25845957de6634d9341b7f81124d59a2"></a><a class="link" href="#_25845957de6634d9341b7f81124d59a2">3.17. 通用的ajax响应实体«Map«string,object»»</a></h3>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 61.1111%;">
+<col style="width: 22.2223%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-middle">Name</th>
+<th class="tableblock halign-left valign-middle">Description</th>
+<th class="tableblock halign-left valign-middle">Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>code</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">状态码，默认200</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int32)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>message</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">消息，请求成功时为空，请求发生异常时，显示异常的提示</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>result</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">结果，泛型</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">object</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>timestamp</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">时间戳</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int64)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_f03599365c42d6d2fd81c243a985d47d"><a class="anchor" href="#_f03599365c42d6d2fd81c243a985d47d"></a><a class="link" href="#_f03599365c42d6d2fd81c243a985d47d">3.18. 通用的ajax响应实体«api的统计数据»</a></h3>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 61.1111%;">
+<col style="width: 22.2223%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-middle">Name</th>
+<th class="tableblock halign-left valign-middle">Description</th>
+<th class="tableblock halign-left valign-middle">Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>code</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">状态码，默认200</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int32)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>message</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">消息，请求成功时为空，请求发生异常时，显示异常的提示</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>result</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">结果，泛型</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="#_c597ef4bc4160c66a5c6a594b6b27678">api的统计数据</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>timestamp</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">时间戳</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int64)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_f52d64d3ee64a6e7fae7540feb14b52d"><a class="anchor" href="#_f52d64d3ee64a6e7fae7540feb14b52d"></a><a class="link" href="#_f52d64d3ee64a6e7fae7540feb14b52d">3.19. 通用的ajax响应实体«boolean»</a></h3>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 61.1111%;">
+<col style="width: 22.2223%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-middle">Name</th>
+<th class="tableblock halign-left valign-middle">Description</th>
+<th class="tableblock halign-left valign-middle">Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>code</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">状态码，默认200</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int32)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>message</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">消息，请求成功时为空，请求发生异常时，显示异常的提示</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>result</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">结果，泛型</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>timestamp</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">时间戳</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int64)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_b919872925ac2aa760af91f2b6ef5503"><a class="anchor" href="#_b919872925ac2aa760af91f2b6ef5503"></a><a class="link" href="#_b919872925ac2aa760af91f2b6ef5503">3.20. 通用的ajax响应实体«string»</a></h3>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 61.1111%;">
+<col style="width: 22.2223%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-middle">Name</th>
+<th class="tableblock halign-left valign-middle">Description</th>
+<th class="tableblock halign-left valign-middle">Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>code</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">状态码，默认200</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int32)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>message</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">消息，请求成功时为空，请求发生异常时，显示异常的提示</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>result</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">结果，泛型</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>timestamp</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">时间戳</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int64)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_a73e95106fa69d7fd6ee00ffc5273158"><a class="anchor" href="#_a73e95106fa69d7fd6ee00ffc5273158"></a><a class="link" href="#_a73e95106fa69d7fd6ee00ffc5273158">3.21. 通用的ajax响应实体«列表数据实体«日志实体»»</a></h3>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 61.1111%;">
+<col style="width: 22.2223%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-middle">Name</th>
+<th class="tableblock halign-left valign-middle">Description</th>
+<th class="tableblock halign-left valign-middle">Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>code</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">状态码，默认200</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int32)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>message</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">消息，请求成功时为空，请求发生异常时，显示异常的提示</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>result</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">结果，泛型</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="#_e1f3f3f0dfad3313d97a6200f2247334">列表数据实体«日志实体»</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>timestamp</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">时间戳</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int64)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_74cc9cae850450b802bc1e6adbbb148c"><a class="anchor" href="#_74cc9cae850450b802bc1e6adbbb148c"></a><a class="link" href="#_74cc9cae850450b802bc1e6adbbb148c">3.22. 通用的ajax响应实体«列表数据实体«服务实体»»</a></h3>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 61.1111%;">
+<col style="width: 22.2223%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-middle">Name</th>
+<th class="tableblock halign-left valign-middle">Description</th>
+<th class="tableblock halign-left valign-middle">Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>code</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">状态码，默认200</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int32)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>message</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">消息，请求成功时为空，请求发生异常时，显示异常的提示</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>result</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">结果，泛型</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="#_d94fadd1fb99167ac85c5d5cf889be31">列表数据实体«服务实体»</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>timestamp</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">时间戳</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int64)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_f57fdc61bf3353ddd51f20897e3d353f"><a class="anchor" href="#_f57fdc61bf3353ddd51f20897e3d353f"></a><a class="link" href="#_f57fdc61bf3353ddd51f20897e3d353f">3.23. 通用的ajax响应实体«服务调用告警率统计»</a></h3>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 61.1111%;">
+<col style="width: 22.2223%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-middle">Name</th>
+<th class="tableblock halign-left valign-middle">Description</th>
+<th class="tableblock halign-left valign-middle">Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>code</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">状态码，默认200</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int32)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>message</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">消息，请求成功时为空，请求发生异常时，显示异常的提示</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>result</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">结果，泛型</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="#_de6b363af8acdd2edc69104626063ab8">服务调用告警率统计</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>timestamp</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">时间戳</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int64)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_2be77b66e2e2986665fc4672afbf9b05"><a class="anchor" href="#_2be77b66e2e2986665fc4672afbf9b05"></a><a class="link" href="#_2be77b66e2e2986665fc4672afbf9b05">3.24. 通用的ajax响应实体«服务调用成功率统计»</a></h3>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 61.1111%;">
+<col style="width: 22.2223%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-middle">Name</th>
+<th class="tableblock halign-left valign-middle">Description</th>
+<th class="tableblock halign-left valign-middle">Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>code</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">状态码，默认200</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int32)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>message</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">消息，请求成功时为空，请求发生异常时，显示异常的提示</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>result</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">结果，泛型</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="#_b5fde2a73252d6b647a4715e757ad108">服务调用成功率统计</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>timestamp</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">时间戳</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int64)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_872c422ca6e098840dbfe2500b303699"><a class="anchor" href="#_872c422ca6e098840dbfe2500b303699"></a><a class="link" href="#_872c422ca6e098840dbfe2500b303699">3.25. 通用的ajax响应实体«生产者的统计数据»</a></h3>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 61.1111%;">
+<col style="width: 22.2223%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-middle">Name</th>
+<th class="tableblock halign-left valign-middle">Description</th>
+<th class="tableblock halign-left valign-middle">Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>code</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">状态码，默认200</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int32)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>message</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">消息，请求成功时为空，请求发生异常时，显示异常的提示</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>result</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">结果，泛型</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="#_d2399114a411d0f9d77739865d2c5760">生产者的统计数据</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>timestamp</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">时间戳</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int64)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_f20947c1556c91f2254c4b143a18cb2a"><a class="anchor" href="#_f20947c1556c91f2254c4b143a18cb2a"></a><a class="link" href="#_f20947c1556c91f2254c4b143a18cb2a">3.26. 通用的ajax响应实体«用户实体»</a></h3>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 61.1111%;">
+<col style="width: 22.2223%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-middle">Name</th>
+<th class="tableblock halign-left valign-middle">Description</th>
+<th class="tableblock halign-left valign-middle">Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>code</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">状态码，默认200</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int32)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>message</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">消息，请求成功时为空，请求发生异常时，显示异常的提示</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>result</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">结果，泛型</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="#_e0e14a34025d14efed947f52b6e65068">用户实体</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>timestamp</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">时间戳</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">integer(int64)</p></td>
 </tr>
 </tbody>
 </table>
@@ -3199,7 +3150,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-05-08 14:34:11 +08:00
+Last updated 2020-06-23 16:21:50 +08:00
 </div>
 </div>
 </body>
